@@ -95,7 +95,7 @@ export default function Home() {
         {/* Feature grid */}
         <div
           id="features"
-          className="mt-24 grid w-full max-w-4xl gap-6 md:grid-cols-3"
+          className="mt-24 grid w-full max-w-4xl gap-6 md:grid-cols-2 lg:grid-cols-4"
         >
           {[
             {
@@ -112,6 +112,11 @@ export default function Home() {
               icon: "🧠",
               title: "AI Explanations",
               desc: "Complex metrics explained in plain English",
+            },
+            {
+              icon: "📚",
+              title: "Learning Modules",
+              desc: "Master investing basics with beginner-friendly lessons",
             },
           ].map((f) => (
             <div

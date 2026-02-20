@@ -83,7 +83,7 @@ export default function DashboardPage() {
       {/* Dashboard Content */}
       <main className="mx-auto max-w-6xl px-6 py-10">
         {/* Welcome */}
-        <div className="mb-8 flex items-start justify-between">
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h2 className="text-2xl font-bold">
               Welcome back{" "}
@@ -93,12 +93,32 @@ export default function DashboardPage() {
               Your portfolio dashboard — live market data
             </p>
           </div>
-          <button
-            onClick={() => router.push("/dashboard/optimizer")}
-            className="btn-primary !px-5 !py-2.5 text-sm"
-          >
-            ⚡ Optimize Portfolio
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={() => router.push("/dashboard/learn")}
+              className="rounded-lg px-5 py-2.5 text-sm font-medium transition-all"
+              style={{
+                border: "1px solid var(--card-border)",
+                color: "var(--foreground)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "var(--accent)";
+                e.currentTarget.style.boxShadow = "0 0 16px var(--accent-glow)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "var(--card-border)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              📚 Start Learning
+            </button>
+            <button
+              onClick={() => router.push("/dashboard/optimizer")}
+              className="btn-primary !px-5 !py-2.5 text-sm"
+            >
+              ⚡ Optimize Portfolio
+            </button>
+          </div>
         </div>
 
         {/* Live Prices Section */}
@@ -172,44 +192,44 @@ export default function DashboardPage() {
           )}
         </section>
 
-        {/* Upcoming Features */}
+        {/* Quick Links */}
         <section>
-          <h3 className="mb-4 text-lg font-semibold">🚀 Coming Soon</h3>
+          <h3 className="mb-4 text-lg font-semibold">🚀 Explore</h3>
           <div className="grid gap-4 md:grid-cols-2">
             {[
               {
-                title: "🧠 AI Explanations",
-                desc: "ELI5 breakdowns of your portfolio",
-                phase: "Phase 5",
+                title: "⚡ Portfolio Optimizer",
+                desc: "AI-optimized allocations powered by Monte Carlo simulation",
+                href: "/dashboard/optimizer",
               },
               {
                 title: "📚 Learning Modules",
-                desc: "Master investing fundamentals",
-                phase: "Phase 6",
+                desc: "Master investing fundamentals with beginner-friendly lessons",
+                href: "/dashboard/learn",
               },
             ].map((card) => (
               <div
                 key={card.title}
-                className="glass-card flex flex-col justify-between p-5 transition-all duration-300"
-                style={{ opacity: 0.6 }}
+                className="glass-card cursor-pointer p-5 transition-all duration-300"
+                onClick={() => router.push(card.href)}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "var(--accent)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "var(--card-border)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
               >
-                <div>
-                  <h4 className="text-base font-semibold">{card.title}</h4>
-                  <p
-                    className="mt-1.5 text-sm"
-                    style={{ color: "var(--muted)" }}
-                  >
-                    {card.desc}
-                  </p>
-                </div>
+                <h4 className="text-base font-semibold">{card.title}</h4>
+                <p className="mt-1.5 text-sm" style={{ color: "var(--muted)" }}>
+                  {card.desc}
+                </p>
                 <span
-                  className="mt-3 inline-block w-fit rounded-full px-3 py-1 text-xs font-medium"
-                  style={{
-                    background: "var(--accent-glow)",
-                    color: "var(--accent-hover)",
-                  }}
+                  className="mt-3 inline-block text-xs font-medium"
+                  style={{ color: "var(--accent-hover)" }}
                 >
-                  {card.phase}
+                  Open →
                 </span>
               </div>
             ))}
