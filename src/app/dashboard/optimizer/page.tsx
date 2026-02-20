@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/AuthProvider";
 import PortfolioInput from "@/components/PortfolioInput";
 import PortfolioResults from "@/components/PortfolioResults";
+import ELI5Card from "@/components/ELI5Card";
 import {
   calculateDailyReturns,
   calculatePortfolioMetrics,
@@ -186,10 +187,16 @@ export default function OptimizerPage() {
 
         {/* Results */}
         {userMetrics && !optimizing && (
-          <PortfolioResults
-            metrics={userMetrics}
-            optimizedMetrics={optimizedMetrics || undefined}
-          />
+          <>
+            <PortfolioResults
+              metrics={userMetrics}
+              optimizedMetrics={optimizedMetrics || undefined}
+            />
+            <ELI5Card
+              userMetrics={userMetrics}
+              optimizedMetrics={optimizedMetrics || undefined}
+            />
+          </>
         )}
       </main>
     </div>
