@@ -83,14 +83,22 @@ export default function DashboardPage() {
       {/* Dashboard Content */}
       <main className="mx-auto max-w-6xl px-6 py-10">
         {/* Welcome */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold">
-            Welcome back{" "}
-            <span className="gradient-text">{user.email?.split("@")[0]}</span>
-          </h2>
-          <p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
-            Your portfolio dashboard — live market data
-          </p>
+        <div className="mb-8 flex items-start justify-between">
+          <div>
+            <h2 className="text-2xl font-bold">
+              Welcome back{" "}
+              <span className="gradient-text">{user.email?.split("@")[0]}</span>
+            </h2>
+            <p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
+              Your portfolio dashboard — live market data
+            </p>
+          </div>
+          <button
+            onClick={() => router.push("/dashboard/optimizer")}
+            className="btn-primary !px-5 !py-2.5 text-sm"
+          >
+            ⚡ Optimize Portfolio
+          </button>
         </div>
 
         {/* Live Prices Section */}
@@ -167,13 +175,8 @@ export default function DashboardPage() {
         {/* Upcoming Features */}
         <section>
           <h3 className="mb-4 text-lg font-semibold">🚀 Coming Soon</h3>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             {[
-              {
-                title: "⚡ Portfolio Optimizer",
-                desc: "AI-powered allocation with Sharpe ratio",
-                phase: "Phase 4",
-              },
               {
                 title: "🧠 AI Explanations",
                 desc: "ELI5 breakdowns of your portfolio",
