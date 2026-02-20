@@ -1,0 +1,216 @@
+# AGENTS.md — Master Plan for SimpliFolio
+
+## Project Overview
+**App:** SimpliFolio  
+**Goal:** AI-powered quant portfolio optimization for beginner retail investors  
+**Stack:** Next.js + Supabase + Tailwind + shadcn/ui + Tremor + Groq/Gemini  
+**Deployment:** Vercel  
+**Timeline:** 7 days  
+**Budget:** $0  
+**Current Phase:** Phase 1 — Foundation
+
+---
+
+# 🧠 HOW I SHOULD THINK
+
+1. Understand intent → do not jump into coding.
+2. Load required context files BEFORE planning.
+3. Plan → get approval → implement.
+4. Build ONE small feature at a time.
+5. Verify manually after every change.
+6. Commit after every working milestone.
+
+---
+
+# 📚 MANDATORY CONTEXT LOADING ORDER (ALWAYS FIRST)
+
+Before making ANY plan or generating code, I MUST read:
+
+1. `agent_docs/product_requirements.md`  
+   → source of truth for features & scope
+
+2. `agent_docs/tech_stack.md`  
+   → architecture, DB schema, data flow
+
+3. `agent_docs/project_brief.md`  
+   → workflow rules & commit standards
+
+4. `agent_docs/testing.md`  
+   → how to verify features
+
+If any required detail is missing → ASK the user.
+
+DO NOT SKIP THIS STEP.
+
+---
+
+# 🎯 MVP FEATURE SOURCE OF TRUTH
+
+All features MUST come from:
+`agent_docs/product_requirements.md`
+
+If a feature is not listed there → it is OUT OF SCOPE.
+
+---
+
+# 🪜 BUILDING STRATEGY (VIBE-CODER MODE)
+
+Explain what to do — not long theory.
+
+Each task must be:
+
+Small  
+Testable  
+Commit-ready  
+
+---
+
+# 🔁 PLAN → EXECUTE → VERIFY LOOP
+
+## PLAN
+- What feature is next?
+- Files to create/update
+- How to test it manually
+
+WAIT for approval.
+
+## EXECUTE
+Implement only that feature.
+
+## VERIFY
+Run:
+- Dev server
+- Manual user flow
+- Console check
+
+If working → commit.
+
+---
+
+# 🧱 ARCHITECTURE RULES
+
+## Data Flow (MANDATORY)
+External API  
+→ Next.js server route  
+→ Supabase cache  
+→ UI
+
+NEVER call external APIs directly from client.
+
+## Quant Engine
+Runs in frontend using mathjs.
+
+## AI Flow
+Quant output → API route → Groq/Gemini → ELI5 card
+
+Fallback:
+If AI fails → show raw metrics.
+
+---
+
+# 💾 GIT PORTFOLIO RULES (CRITICAL)
+
+This project is a recruiter signal.
+
+After every completed feature:
+
+Create a commit using format:
+
+feat: add Supabase authentication  
+feat: implement market cache layer  
+feat: build portfolio optimizer  
+
+NEVER leave working code uncommitted.
+
+---
+
+# 🧪 VERIFICATION CHECKPOINTS
+
+A feature is DONE only if:
+
+- It works in UI
+- No console errors
+- It survives page refresh
+- It follows architecture rules
+
+---
+
+# 🚫 WHAT NOT TO DO
+
+Do NOT:
+- Add features outside MVP
+- Break API free-tier limits
+- Call APIs from client
+- Leave half-working code
+- Refactor entire app without approval
+- Install new libraries without checking tech_stack.md
+
+---
+
+# 🗺️ 7-DAY EXECUTION ROADMAP
+
+## Phase 1 — Foundation
+- Initialize Next.js app
+- Setup Supabase
+- Deploy blank app
+
+## Phase 2 — Authentication
+- Supabase auth
+- user_settings table
+- Session persistence
+
+## Phase 3 — Market Dashboard
+- Server API route
+- Supabase market_cache
+- Prices UI
+- News UI
+
+## Phase 4 — Quant Engine
+- Portfolio input UI
+- mathjs calculations
+- Results display
+
+## Phase 5 — AI Explanation
+- API route for AI
+- ELI5 card
+- Failure fallback
+
+## Phase 6 — Learning Modules
+- Static content section
+
+## Phase 7 — Polish & Launch
+- End-to-end testing
+- UI cleanup
+- README + project report
+
+---
+
+# 🧭 CURRENT STATE (UPDATE AFTER EACH PHASE)
+
+Last Updated: Day 1  
+Working On: Project initialization  
+Completed: None  
+Blocked By: None  
+
+---
+
+# 🏁 DEFINITION OF MVP DONE
+
+✔ Sign up → login → session persists  
+✔ User sees live prices  
+✔ User runs portfolio optimizer  
+✔ AI generates ELI5 explanation  
+✔ App deployed on Vercel  
+✔ Strong Git commit history  
+
+---
+
+# 🤖 HOW TO INTERACT WITH USER
+
+When starting a phase:
+
+1. Show plan
+2. Ask for approval
+3. Implement
+
+Keep responses concise and action-oriented.

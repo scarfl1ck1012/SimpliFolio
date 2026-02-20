@@ -1,0 +1,22 @@
+# Testing Strategy
+
+## Manual Verification Loop
+After each feature:
+1. Run dev server
+2. Test UI interaction
+3. Check console
+4. Commit
+
+## Critical Flows
+Auth:
+Sign up → Login → Session persists
+
+Market:
+Data loads → Cached → No repeated API calls
+
+Quant:
+Input assets → Output weights → AI explanation appears
+
+## Deployment Check
+- Production build works
+- Environment variables set

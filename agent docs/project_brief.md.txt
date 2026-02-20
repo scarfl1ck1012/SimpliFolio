@@ -1,0 +1,22 @@
+# Project Brief
+
+## Product Vision
+AI-powered quant investing for beginners with clean UI.
+
+## Coding Rules
+- Small commits per feature
+- Descriptive commit messages
+- Working code only
+
+## Quality Gates
+Before moving forward:
+- Feature works manually
+- No console errors
+- Git commit created
+
+## Key Commands
+npm run dev  
+npm run build  
+
+## Update Cadence
+Update this file after each completed phase.

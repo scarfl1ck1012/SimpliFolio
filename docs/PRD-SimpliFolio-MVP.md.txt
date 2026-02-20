@@ -1,0 +1,51 @@
+# Product Requirements Document: SimpliFolio MVP ## Product Overview **App Name:** SimpliFolio **Tagline:** Gives everyday retail investors the advanced quant tools of Wall Street with the simplicity of a 5-year-old's textbook. **Launch Goal:** Build a standout developer portfolio piece to land future opportunities, and drive initial user signups. **Target Launch:** 7 days ## Who It's For ### Primary User: The Curious Retail Investor Newcomers learning about the market and everyday retail investors who want to check live prices, stay on top of news, and leverage AI to make better, math-backed decisions. **Their Current Pain:** - Confused about where to invest and exactly how much capital to allocate. - Overwhelmed by complex financial jargon and Wall Street math. - Unsure how to balance risk versus reward when building a portfolio. **What They Need:** - A clean, interactive UI to check prices and news. - "Explain like I'm 5" (ELI5) breakdowns of advanced quantitative concepts. - Simple tools to calculate the optimal mathematical allocation for their stocks. ### Example User Story "Meet Sarah, a newcomer to investing who wants to grow her wealth but is confused by where and how much to invest. Every day she sees stock news but doesn't know how to act on it without taking on too much risk. She needs a beginner-friendly platform that teaches her the basics and uses AI to show her the best mathematical options—balancing risk and return—so she can confidently allocate her portfolio." ## The Problem We're Solving Retail investors are often forced to choose between overly simple apps that lack deep analysis, or advanced quant platforms that look like airplane cockpits. SimpliFolio bridges this gap. It provides the smooth, modern UI of a retail app while integrating machine learning and AI to translate heavy quantitative analysis into actionable, everyday language. **Why Existing Solutions Fall Short:** - **Retail Apps (e.g., Groww, Robinhood):** Great for buying, but lack advanced portfolio optimization and risk/return calculators. - **Quant Tools (e.g., Portfolio Visualizer):** Intimidating UI, overwhelming data, and no built-in learning curve for beginners. ## User Journey ### Discovery → First Use → Success 1. **Discovery Phase** - How they find us: Developer portfolio link, GitHub, or social media sharing. - What catches their attention: "Wall Street math explained by AI." - Decision trigger: The promise of a clean, free, and educational tool. 2. **Onboarding (First 5 Minutes)** - Land on: Landing page / Authentication screen. - First action: Signs up and logs into the interactive dashboard. - Quick win: Instantly sees live stock prices and simple market news. 3. **Core Usage Loop** - Trigger: Wants to know how much to invest in a specific set of stocks. - Action: Uses the AI Quant Tool to calculate portfolio variance and risk/return ratios. - Reward: Gets an ELI5 summary of exactly what the math means for their money. - Investment: Explores the Learning Courses to understand the concepts deeper. 4. **Success Moment** - "Aha!" moment: Sarah realizes she can mathematically optimize her portfolio without needing a finance degree. - Share trigger: Shares the clean, uncluttered AI summary with friends. ## MVP Features ### Must Have for Launch #### 1. Live Prices & News Dashboard - **What:** A modern, uncluttered UI (using open-source Tailwind templates) displaying real-time stock data and basic news. - **User Story:** As a retail investor, I want to see live stock prices and news so that I can stay updated on market movements. - **Success Criteria:** - [ ] Successfully pulls data from a free API (e.g., Finnhub or Alpha Vantage). - [ ] Implements a caching strategy to strictly respect $0 API rate limits. - **Priority:** P0 (Critical) #### 2. AI Quant Tools & Optimization - **What:** Tools that calculate mathematical options for asset allocation. This includes foundational portfolio optimization metrics like the Sharpe Ratio and portfolio variance, alongside potential ML-driven clustering (like t-SNE or LDA) to group similar risk-profile assets. Free AI models (Groq/Gemini) will ingest these outputs to generate ELI5 explanations. - **User Story:** As an investor, I want to see the best mathematical allocation for my stocks so that I can balance my risk and return safely. - **Success Criteria:** - [ ] Calculates core portfolio optimization metrics mathematically. - [ ] Displays an AI-generated, easy-to-read summary of the complex data. - **Priority:** P0 (Critical) #### 3. Learning Courses - **What:** A dedicated section with integrated, beginner-friendly learning modules covering stock market basics. - **User Story:** As a newcomer, I want to learn the basics of the market so that I understand what the AI tools are doing. - **Success Criteria:** - [ ] Static or easily embedded video/text modules accessible from the dashboard. - **Priority:** P0 (Critical) #### 4. Authentication & Customization - **What:** A sign-in page and modular settings to let users choose what they want to see on their dashboard. - **User Story:** As a user, I want to create an account and customize my view so that the app feels tailored to my needs. - **Success Criteria:** - [ ] Working sign-up/sign-in flow. - [ ] Basic toggle preferences for dashboard clutter (allowing users to show/hide specific modules). - **Priority:** P0 (Critical) ### NOT in MVP (Saving for Later) - **Subscription Plans / Paywalls**: Keeping it 100% free and focused on learning/portfolio building. - **Live Trading/Brokerage Integration**: Too complex and legally risky for a 7-day build. - **Heavy Financial Jargon without AI translation**: If it can't be explained simply, it doesn't go in V1. *Why we're waiting: Keeps the MVP strictly within the 7-day timeline and $0 budget.* ## How We'll Know It's Working ### Launch Success Metrics (First 30 Days) | Metric | Target | Measure | |--------|--------|---------| | User Signups | 50+ | Database user count | | Portfolio Impact | High Visibility | Consistent Git commits tracking the project-based learning journey, a complete project report, and GitHub profile visits | ## Look & Feel **Design Vibe:** Clean, trustworthy, beginner-friendly, interactive, not cluttered. **Visual Principles:** 1. **Focus on Clarity:** Use ample whitespace and distinct typography so data isn't overwhelming. 2. **Interactive but Simple:** Charts and tools should invite clicks without confusing the user. 3. **Friendly AI Integration:** AI explanations should look like helpful chat bubbles or distinct, readable cards. ### Simple Wireframe
+text
+[SimpliFolio Dashboard]
+┌───────────────────────────────────────────────┐
+│  [Logo]   Dashboard   Quant Tools   Learn  [👤]│
+├──────────────────────┬────────────────────────┤
+│                      │                        │
+│  Live Market Prices  │   AI Portfolio Guide   │
+│  - AAPL: $150 📈     │   "Here is the best    │
+│  - TSLA: $200 📉     │   way to split your    │
+│                      │   money for max return"│
+├──────────────────────┼────────────────────────┤
+│                      │                        │
+│   Latest News        │   Learning Courses     │
+│  [Headline 1]        │   ▶️ Market Basics     │
+│  [Headline 2]        │   ▶️ Understanding Risk│
+│                      │                        │
+└──────────────────────┴────────────────────────┘
+Technical Considerations & Constraints
+Platform: Web (Next.js + React)
+Design System: Tailwind CSS (via open-source templates like Shadcn/ui or Tremor)
+Budget: Strictly $0.
+APIs: Free tiers only (Finnhub/Alpha Vantage for data, Groq/Gemini/Ollama for AI).
+Performance/Constraints: - Must implement aggressive caching/data management to prevent breaking free-tier API rate limits.
+
+Development process must include side-by-side Git commits to track progress and showcase hands-on coding experience.
+
+A project report will be generated concurrently with development.
+
+Quality Standards
+What This App Will NOT Accept:
+
+Broken features — everything listed works or isn't included.
+
+Breaking API limits on day one due to lack of caching.
+
+Uncommitted code (frequent, descriptive Git commits are required for the project portfolio).
+
+Definition of Done for MVP
+The MVP is ready to launch when:
+
+[ ] Next.js frontend is deployed for free (e.g., Vercel).
+
+[ ] All 4 P0 features are functional.
+
+[ ] API rate limits are safely managed.
+
+[ ] Git repository is public with a strong commit history and a complete project report.
+
+[ ] One complete user journey works end-to-end (Sign up -> Check Prices -> Run AI Quant Tool).
+

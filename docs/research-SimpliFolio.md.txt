@@ -1,0 +1,52 @@
+Deep Research Request: AI-Powered Unified Finance Platform
+<context>
+I'm a non-technical founder building a unified financial platform. It combines the beginner-friendly UI and live market tracking of retail apps (like Groww) with the advanced quantitative tools of analysis platforms (like Portfolio Visualizer), plus integrated learning courses.
+
+I need beginner-friendly research with actionable insights. I need to build the MVP of this website in 1 week with a strict $0 budget, relying entirely on free-tier APIs, open-source templates, and free hosting.
+</context>
+
+<instructions>
+
+Key Questions to Answer:
+What is the absolute fastest way to build the frontend to look like a modern trading app (Groww/Zerodha)? Find the best free, open-source Next.js + Tailwind dashboard templates (e.g., TailAdmin, Tremor, Shadcn/ui) suited for finance.
+
+What are the best 100% free APIs for real-time stock prices, historical data, and basic news (e.g., Finnhub, Alpha Vantage, EODHD)? Compare their rate limits.
+
+How can I easily integrate free AI models (like Groq, Gemini free tier, or Ollama) to generate "Explain like I'm 5" summaries of complex quant data (like Monte Carlo simulations or Efficient Frontier) directly in the UI?
+
+Are there any open-source GitHub repositories or Python/JS libraries that already calculate Portfolio Visualizer metrics (backtesting, risk analysis, asset correlation) that I can plug into a Next.js site?
+
+What is the simplest way to integrate basic "Learning Courses" or video modules into the dashboard without a complex backend?
+
+What is the step-by-step roadmap to get this deployed for free (e.g., Vercel, Netlify) within 7 days?
+
+Research Focus:
+Extremely simple, actionable insights with code-level examples where possible.
+
+Strict adherence to the $0 budget (highlighting strict API rate limits and free-tier constraints).
+
+Rapid development using Next.js, React, and pre-built Tailwind components.
+
+Step-by-step implementation guidance for the AI "Explain like I'm 5" feature.
+
+Required Deliverables:
+Free Tech Stack Breakdown — UI framework, Data API, AI API, and Hosting.
+
+Open-Source Asset List — Direct links to GitHub repos for UI templates and quant calculation libraries.
+
+MVP 7-Day Roadmap — A day-by-day plan focusing only on the 3 core features: Live Prices, AI Quant Tools, and Learning Courses.
+
+API Rate Limit Strategy — How to cache or manage data so the free APIs don't break when users hit the site.
+
+</instructions>
+
+<output_format>
+
+Explain everything in plain English with examples.
+
+Include source URLs with access dates for each major recommendation, GitHub repo, and API.
+
+Use tables for comparing the free data APIs (Finnhub vs. Alpha Vantage, etc.).
+
+Highlight any conflicting information or hidden limits on "free" tiers.
+</output_format>

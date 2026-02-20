@@ -1,0 +1,17 @@
+## Read First
+Always read AGENTS.md before doing anything.
+
+## Workflow
+1. Plan the next small feature
+2. Wait for approval
+3. Implement
+4. Verify manually
+
+## Build Strategy
+- One feature at a time
+- Use existing stack only
+- Prefer simple solutions
+
+## Commands
+npm run dev
+npm run build

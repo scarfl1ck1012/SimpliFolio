@@ -1,0 +1,55 @@
+2.# Technical Design Document: SimpliFolio MVP
+
+## How We'll Build It
+
+### Recommended Approach: AI-First Full-Stack on Free Tiers
+
+Based on your 7-day deadline, $0 budget, and Antigravity + Claude workflow:
+
+**Primary Recommendation: Next.js + Supabase + Vercel (AI-generated code)**
+
+- **Why it's perfect for you:**
+  - One-command deploy to Vercel
+  - Supabase handles Auth + DB + API automatically
+  - AI tools are extremely good at generating this stack
+  - Real developer stack → strong portfolio signal
+
+- **What it costs:** $0 (free tiers)
+- **Time to learn:** ~4–6 hours total
+- **Limitations to know:** Serverless limits, API rate limits, no heavy background jobs
+
+---
+
+### Alternative Options Compared
+
+| Option | Pros | Cons | Cost | Time to MVP |
+|--------|------|------|------|-------------|
+Firebase | Very fast setup | Less SQL/quant credibility | Free | 6–7 days |
+Local backend + VPS | Full control | DevOps overhead | ❌ Not free | 14+ days |
+Supabase (Chosen) | SQL + Auth + Edge + AI-friendly | Free-tier DB limits | Free | ✅ 5–7 days |
+
+**Why Supabase wins:** quant credibility + fastest real-world stack.
+
+---
+
+## Project Setup Checklist
+
+### Day 1 — Accounts
+- [ ] Supabase
+- [ ] Vercel
+- [ ] Finnhub or Alpha Vantage
+- [ ] Groq
+- [ ] Gemini (backup AI)
+
+---
+
+### Day 1 — AI Dev Environment
+- [ ] Install Antigravity
+- [ ] Connect Claude Opus
+- [ ] Open project folder
+- [ ] Initialize Git repo
+
+---
+
+### Day 1 — Project Initialization
+bash npx create-next-app simplifolio cd simplifolio npm install npm install @supabase/supabase-js recharts mathjs swr Core Feature Implementation 1️⃣ Authentication & User Preferences Tool: Supabase Auth Complexity: Easy AI Prompt: Add Supabase authentication with email login and a user_settings table for dashboard module toggles. Database: user_settings - id - user_id - show_prices - show_news - show_learning 2️⃣ Live Prices & News Dashboard Data Flow External API → Supabase cache table → Next.js UI Why this matters Prevents rate-limit failure → critical for free tier. Cache Strategy API called via server route Stored in Supabase Refreshed every X minutes market_cache - symbol - price - updated_at 3️⃣ Quant Portfolio Optimizer Computation Location: Frontend (for speed + free) Metrics: Expected return Portfolio variance Sharpe ratio Optimal weights Using: mathjs AI Prompt: Create a portfolio optimizer that takes asset returns and outputs weights, variance, and Sharpe ratio. 4️⃣ AI Explanation Engine Flow Quant Output → API Route → Groq/Gemini → ELI5 Card UI Failure Fallback If AI fails: → Show raw metrics with “AI unavailable” message. 5️⃣ Learning Modules Static content: MDX pages or embedded YouTube No backend required Design Implementation UI Stack Tailwind shadcn/ui Tremor (for charts) Why Recruiter-grade visuals in hours. Database & Data Storage Option 1 — Supabase (Chosen) Setup time: 10 minutes Cost: Free SQL credibility for portfolio Core Tables users user_settings market_cache portfolio_inputs AI Features Feature Provider ELI5 quant explanation Groq Finance term explainer Gemini News summary Groq All data = public → no privacy risk. AI Assistance Strategy Task Tool Architecture Claude Code generation Antigravity Bug fixing Claude UI generation Claude Deployment Plan Platform: Vercel Steps git push Add environment variables Auto deploy Cost Breakdown Development Service Cost Vercel $0 Supabase $0 Groq $0 Gemini $0 APIs $0 Total: $0 Production (1000 users) Still $0–$25 (within free tiers if caching works). Scaling Path 100 Users No changes required. 1,000 Users Increase cache duration Add Redis (optional) 10,000 Users Move quant to backend. Maintenance & Updates Keep dependencies stable Monthly tool review Maintain commit history for portfolio Important Limitations Cannot Do ❌ Real-time tick streaming ❌ Complex ML training pipelines Workaround Use delayed data + precomputed logic. 7-Day Execution Plan Day 1 Setup + deploy blank app Day 2 Auth + DB Day 3 Market dashboard + caching Day 4 Quant engine Day 5 AI explanations Day 6 Learning modules + UI polish Day 7 Testing + GitHub report + launch 🚀 Definition of Technical Success ✅ Full user flow works ✅ No API limit crashes ✅ Deployed ✅ Strong Git history ✅ Recruiter can understand architecture in 2 minutes

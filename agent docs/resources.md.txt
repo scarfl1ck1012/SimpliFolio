@@ -1,0 +1,7 @@
+# Essential Resources
+
+Supabase Docs → Auth & DB  
+Vercel Docs → Deployment  
+Tremor → charts  
+shadcn/ui → UI components  
+mathjs → portfolio math

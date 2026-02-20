@@ -1,0 +1,62 @@
+# Tech Stack & Tools
+
+## Core Stack
+Frontend: Next.js (App Router)  
+Backend: Supabase (Auth + Postgres + API)  
+Deployment: Vercel  
+
+## UI
+Tailwind CSS  
+shadcn/ui  
+Tremor → charts  
+
+## Data & State
+SWR → data fetching  
+Supabase cache tables → prevent API limit crashes  
+
+## Quant Calculations
+mathjs → portfolio math in frontend
+
+## AI Providers
+Groq → ELI5 quant explanation  
+Gemini → fallback  
+
+---
+
+## Install Commands
+
+npx create-next-app simplifolio
+npm install @supabase/supabase-js recharts mathjs swr
+
+---
+
+## Architecture Pattern
+
+External API  
+→ Next.js server route  
+→ Supabase cache  
+→ UI
+
+NEVER call external API directly from client.
+
+---
+
+## Supabase Tables
+
+user_settings
+- id
+- user_id
+- show_prices
+- show_news
+- show_learning
+
+market_cache
+- symbol
+- price
+- updated_at
+
+portfolio_inputs
+- id
+- user_id
+- assets
+- weights

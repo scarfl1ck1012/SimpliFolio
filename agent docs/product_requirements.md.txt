@@ -1,0 +1,35 @@
+# Product Requirements
+
+## Primary User
+Retail investors who want:
+- Live prices
+- News
+- AI portfolio allocation
+- Beginner learning modules
+
+## Must-Have Features
+1. Live prices + news dashboard with caching
+2. Quant optimizer:
+   - expected return
+   - variance
+   - Sharpe ratio
+   - optimal weights
+3. AI ELI5 explanation
+4. Authentication + dashboard customization
+5. Learning modules
+
+## NOT in MVP
+- Trading integration
+- Payments
+- Complex ML pipelines
+
+## Success Metrics
+50+ signups  
+Complete user journey  
+Recruiter-understandable architecture in 2 minutes
+
+## Design Vibe
+Clean  
+Trustworthy  
+Beginner-friendly  
+Not cluttered
